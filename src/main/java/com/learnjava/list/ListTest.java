@@ -1,5 +1,7 @@
 package com.learnjava.list;
 
+import org.springframework.util.ObjectUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,14 @@ public class ListTest {
 
         if(stringList.stream().anyMatch(s->str.contains(s))){
             System.out.println("Inside match ");
+        }
+
+        List<String> stringList1 = new ArrayList<>();
+        stringList1.add("dilip");
+        if(!ObjectUtils.isEmpty(stringList1)){
+            System.out.println("Inside if loop");
+        }else{
+            System.out.println("Inside else loop");
         }
     }
 }

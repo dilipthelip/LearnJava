@@ -1,5 +1,7 @@
 package com.learnjava.streams;
 
+import org.springframework.util.StringUtils;
+
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -15,10 +17,8 @@ public class StreamsIterationCount {
 
         strings.stream().forEachOrdered(e -> System.out.println(strings.indexOf(e) + e));
 
-        //System.out.println("Count : " + l);
 
-
-
+        System.out.println(StringUtils.split("dilip.sundarraj@target.com,dilip.sundarraj@target.com",","));
 
     }
 

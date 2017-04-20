@@ -1,4 +1,4 @@
-package com.learnjava.exception;
+package util;
 
 /**
  * Created by z001qgd on 2/8/17.
