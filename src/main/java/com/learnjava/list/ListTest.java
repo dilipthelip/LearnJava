@@ -1,9 +1,12 @@
 package com.learnjava.list;
 
+import jdk.nashorn.internal.ir.Optimistic;
 import org.springframework.util.ObjectUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by z001qgd on 1/25/17.
@@ -29,5 +32,11 @@ public class ListTest {
         }else{
             System.out.println("Inside else loop");
         }
+
+        List list = Arrays.asList(null);
+        System.out.println("list : " + list);
+
+        Optional<String> empty = Optional.empty();
+        System.out.println(empty.get());
     }
 }
