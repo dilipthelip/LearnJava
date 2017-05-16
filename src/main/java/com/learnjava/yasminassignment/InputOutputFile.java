@@ -32,13 +32,13 @@ public class InputOutputFile extends JPanel implements ActionListener {
         chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("/Dilip/input/"));
         chooser.setDialogTitle(choosertitle);
-        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         //
         // disable the "All files" option.
         //
         chooser.setAcceptAllFileFilterUsed(false);
         //
-        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             System.out.println("getCurrentDirectory(): "
                     +  chooser.getCurrentDirectory());
             System.out.println("getSelectedFile() : "
