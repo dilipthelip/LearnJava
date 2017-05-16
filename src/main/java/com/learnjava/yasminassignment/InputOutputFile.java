@@ -3,6 +3,7 @@ package com.learnjava.yasminassignment;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 
 /**
@@ -14,13 +15,15 @@ public class InputOutputFile extends JPanel /*implements ActionListener*/ {
 
     JFileChooser chooser;
 
-   public void actionPerformed(){
+   public void actionPerformed(String path){
         int result;
-        String inputFolder = "/Dilip/input/";
+        //String inputFolder = "/Dilip/input/";
+       String inputFolder = path;
         chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new java.io.File(inputFolder));
+        chooser.setCurrentDirectory(new File(inputFolder));
         chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         chooser.setAcceptAllFileFilterUsed(false);
+       System.out.println(chooser.showOpenDialog(null));
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             System.out.println("getCurrentDirectory(): "
                     +  chooser.getCurrentDirectory());
@@ -70,6 +73,7 @@ public class InputOutputFile extends JPanel /*implements ActionListener*/ {
             for(Integer val : finalList){
                 String writeString  = Integer.toString(val)+"\n";
                 bw.write(writeString);
+                bw.write("\n");
             }
             System.out.println("File is written to the "+inputFolder+ " folder Successfully." );
         } catch (IOException e) {
@@ -90,9 +94,17 @@ public class InputOutputFile extends JPanel /*implements ActionListener*/ {
     }
 
     public static void main(String s[]) {
-        JFrame frame = new JFrame("");
+
+        String myCurrentDir = System.getProperty("user.dir")
+                + File.separator
+                + System.getProperty("sun.java.command")
+                .substring(0, System.getProperty("sun.java.command").lastIndexOf("."))
+                .replace(".", File.separator);
+        System.out.println("myCurrentDir : " + myCurrentDir);
+        //System.out.println("f : " + f.getPath());
+       JFrame frame = new JFrame("");
         InputOutputFile panel = new InputOutputFile();
-        panel.actionPerformed();
+        panel.actionPerformed(myCurrentDir+"/");
     }
 
 }
