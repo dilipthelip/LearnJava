@@ -24,7 +24,7 @@ public class InputOutputFile extends JPanel /*implements ActionListener*/ {
         chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         chooser.setAcceptAllFileFilterUsed(false);
        System.out.println(chooser.showOpenDialog(null));
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             System.out.println("getCurrentDirectory(): "
                     +  chooser.getCurrentDirectory());
             System.out.println("getSelectedFile() : "
